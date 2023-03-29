@@ -18,9 +18,11 @@ jobs:
         run: |
           import platform 
           print(platform.processor())
-          
+        shell: python
+
   run-windows-commands:
     runs-on: windows-latest
+    needs: ["run-shell-command"]
     steps:
       - name: get directory
         shell: powershell
