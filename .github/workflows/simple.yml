@@ -6,6 +6,9 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
+      - name: trigger build
+        run: echo "build"
+        
       - name: echo a string
         run: echo  "hello world"
       
@@ -13,6 +16,7 @@ jobs:
         run: |
           node -v
           npm -v
+
       
       - name: python commands
         run: |
