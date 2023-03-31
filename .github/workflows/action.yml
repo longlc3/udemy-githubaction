@@ -1,8 +1,8 @@
 name: Action flows
 
 on: 
-  schedule:
-    - cron:  '* * * * *'
+  # schedule:
+  #   - cron:  '* * * * *' # should be single quote not double quote
   # push:
   pull_request:
      types: [opened, synchronize]
