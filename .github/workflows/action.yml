@@ -6,7 +6,17 @@ on:
   # push:
   repository_dispatch:
     types: [build] # this can be used to trigger other repository 
-
+  push:
+    branches:
+      - 'features/*'
+      - 'features/**' # also match this features/aisjfis/siofjsdo
+      - '!features/dev' # the same as branches ignore
+    branches-ignore:
+      - features/hehe
+    tags:
+      - v1.*
+    paths:
+      - '**.js'
   pull_request:
      types: [opened, synchronize]
   workflow_dispatch:
