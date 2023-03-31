@@ -11,8 +11,8 @@ on:
       - 'features/*'
       - 'features/**' # also match this features/aisjfis/siofjsdo
       - '!features/dev' # the same as branches ignore
-    branches-ignore:
-      - 'features/hehe'
+    # branches-ignore:
+    #   - 'features/hehe'
     tags:
       - 'v1.*'
     paths:
