@@ -1,11 +1,26 @@
 name: Action flows
 
-on: [push]
+on: 
+  push:
+    branches:
+        - '*'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+
+          
 jobs:
   run-github-action:
     runs-on: ubuntu-latest
     steps:
-      
       - name: Checkout Repos
         uses: actions/checkout@v3
       
@@ -13,6 +28,22 @@ jobs:
         run: |
           pwd
           ls
+          echo "------------- git hub action sha"
+          echo $GITHUB_SHA
+          echo "----------- github action repository name"
+          echo $GITHUB_REPOSITORY
+          echo "------------github workspace"
+          echo $GITHUB_WORKSPACE
+          echo "------------github path"
+          echo $GITHUB_ACTION_PATH
+          echo "------github env"
+          echo $GITHUB_ENV
+          echo "------github envent trigger"
+          echo $GITHUB_ENV
+          echo "------------github job"
+          echo $GITHUB_JOB
+          echo "---------------branch trigger the job"
+          echo $GITHUB_REF_NAME
 
       - name: simple js action
         uses: actions/hello-world-javascript-action@v1 # even we can reference specific commit
@@ -22,3 +53,6 @@ jobs:
 
       - name: Log greeting time
         run: echo "${{ steps.greet.outputs.time }}"
+
+      - name: Show Environment
+        run: echo ${{ inputs.environment }}
