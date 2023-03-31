@@ -1,5 +1,5 @@
 name: shell commands
-on: []
+on: deployment
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
