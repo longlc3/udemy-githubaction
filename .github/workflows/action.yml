@@ -1,11 +1,9 @@
 name: Action flows
 
 on: 
-  pull_requests:
-    types: [opened]
   push:
-    branches:
-        - '*'
+  pull_request:
+     types: [opened, synchronize]
   workflow_dispatch:
     inputs:
       environment:
