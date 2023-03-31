@@ -2,8 +2,7 @@ name: Action flows
 
 on: 
   schedule:
-    - cron: "* * * * *"
-    - cron: "55 * * * *"
+    - cron:  '* * * * *'
   # push:
   pull_request:
      types: [opened, synchronize]
