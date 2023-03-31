@@ -1,6 +1,9 @@
 name: Matrix
-on: push
-
+on: 
+  push:
+    branches-ignore:
+      - main
+      - master
 jobs:
   node-version:
     strategy:
