@@ -1,7 +1,9 @@
 name: Action flows
 
 on: 
-  push:
+  schedule:
+    - cron: "* * * * *"
+  # push:
   pull_request:
      types: [opened, synchronize]
   workflow_dispatch:
