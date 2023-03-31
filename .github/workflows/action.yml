@@ -55,4 +55,4 @@ jobs:
         run: echo "${{ steps.greet.outputs.time }}"
 
       - name: Show Environment
-        run: echo ${{ inputs.environment }}
+        run: echo "${{ github.event.inputs.environment }}"
