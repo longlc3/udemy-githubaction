@@ -7,9 +7,20 @@ jobs:
       matrix:
         os: [linux-latest, windows-latest]
         node_version: [6, 16]
+        include:
+          - os: linux-latest
+            node_version: 6
+            is_node_6: true
+        exclude:
+          - os: windows-latest
+            node_version: 6
+          - os: linux-latest
+            node_version: 16
       # max-parallel: 2
       # fail-fast: true # if one of the job failed will fail all
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
+    env:
+      IS_NODE_VERSION: ${{ matrix.is_node_6 }}
     steps:
       - name: Log node version
         run: node -v
@@ -21,4 +32,6 @@ jobs:
           node-version: ${{ matrix.node_version }}
       
       - name: Log node version
-        run: node -v
+        run: |
+          node -v
+          echo $IS_NODE_VERSION
