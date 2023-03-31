@@ -3,6 +3,7 @@ name: Action flows
 on: 
   schedule:
     - cron: "* * * * *"
+    - cron: "55 * * * *"
   # push:
   pull_request:
      types: [opened, synchronize]
