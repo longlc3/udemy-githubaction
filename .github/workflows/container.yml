@@ -11,3 +11,18 @@ jobs:
         run: |
           node -v 
           cat /etc/os-release
+          
+  multible-docker:
+    runs-on: ubuntu-latest
+    services:
+      nginx:
+        image: nginx
+        ports:
+          - 80:80
+      mongo:
+        image: mongo
+        ports:
+          - "27017:27017"
+    steps:
+      - name: show nginx
+        run: curl localhost:80
