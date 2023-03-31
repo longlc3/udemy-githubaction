@@ -5,6 +5,15 @@ jobs:
   run-github-action:
     runs-on: ubuntu-latest
     steps:
+      
+      - name: Checkout Repos
+        run: actions/checkout@v1
+      
+      - name: List Files
+        run: |
+          pwd
+          ls
+
       - name: simple js action
         uses: actions/hello-world-javascript-action@v1 # even we can reference specific commit
         id: greet
