@@ -4,6 +4,9 @@ on:
   # schedule:
   #   - cron:  '* * * * *' # should be single quote not double quote
   # push:
+  repository_dispatch:
+    types: [build] # this can be used to trigger other repository 
+
   pull_request:
      types: [opened, synchronize]
   workflow_dispatch:
