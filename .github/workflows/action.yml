@@ -1,6 +1,8 @@
 name: Action flows
 
 on: 
+  pull_requests:
+    types: [opened]
   push:
     branches:
         - '*'
