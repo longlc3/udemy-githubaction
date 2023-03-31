@@ -12,9 +12,9 @@ on:
       - 'features/**' # also match this features/aisjfis/siofjsdo
       - '!features/dev' # the same as branches ignore
     branches-ignore:
-      - features/hehe
+      - 'features/hehe'
     tags:
-      - v1.*
+      - 'v1.*'
     paths:
       - '**.js'
   pull_request:
