@@ -5,7 +5,7 @@ on:
   #   - cron:  '* * * * *' # should be single quote not double quote
   # push:
   repository_dispatch:
-    types: [build,do_something] # this can be used to trigger other repository 
+    types: [build,do_something,do_other_thing] # this can be used to trigger other repository 
   push:
     branches:
       - 'features/*'
