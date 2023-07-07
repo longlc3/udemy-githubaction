@@ -38,6 +38,10 @@ jobs:
     steps:
       - name: Checkout Repos
         uses: actions/checkout@v3
+        
+      - name: show webhook env
+        run: |
+          echo "trigger env is ${{ github.event.client_payload.env }}"
       
       - name: List Files
         run: |
