@@ -1,5 +1,6 @@
 name: shell commands
-on: deployment
+# on: deployment
+on: ""
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
