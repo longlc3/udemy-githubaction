@@ -43,8 +43,9 @@ jobs:
       - name: show webhook env
         run: |
           echo "trigger env is ${{ github.event.client_payload.env }}"
-          echo "user name is ${{ secrets.USERNAME }}"
-      
+          echo "password is ${{ secrets.PASWORD }}"
+          echo "user name is ${{ env.USERNAME }}"
+          
       - name: List Files
         run: |
           pwd
