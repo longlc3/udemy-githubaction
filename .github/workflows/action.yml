@@ -6,17 +6,17 @@ on:
   # push:
   repository_dispatch:
     types: [build,do_something] # this can be used to trigger other repository 
-  push:
-    branches:
-      - 'features/*'
-      - 'features/**' # also match this features/aisjfis/siofjsdo
-      - '!features/dev' # the same as branches ignore
+#   push:
+#     branches:
+#       - 'features/*'
+#       - 'features/**' # also match this features/aisjfis/siofjsdo
+#       - '!features/dev' # the same as branches ignore
     # branches-ignore:
     #   - 'features/hehe'
-    tags:
-      - 'v1.*'
-    paths:
-      - '**.js'
+#     tags:
+#       - 'v1.*'
+#     paths:
+#       - '**.js'
   pull_request:
      types: [opened, synchronize]
   workflow_dispatch:
@@ -33,7 +33,8 @@ on:
 
           
 jobs:
-  run-github-action:
+  run-github-action: 
+    environment: ${{ github.event.client_payload.env }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repos
@@ -42,6 +43,7 @@ jobs:
       - name: show webhook env
         run: |
           echo "trigger env is ${{ github.event.client_payload.env }}"
+          echo "user name is ${{ secrets.USERNAME }}"
       
       - name: List Files
         run: |
